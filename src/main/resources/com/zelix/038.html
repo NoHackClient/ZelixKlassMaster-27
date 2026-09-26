@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!-- Copyright 2026 Zelix Pty Ltd (ABN 47 078 740 093) --> 
+<html>
+<body bgcolor="#FFFFFF">
+
+<h1>Obfuscated Bytecode Classpath Window</h1>
+Contents:
+<ul>
+<li><a href="#Overview">Overview</a>
+<li><a href="#list">Path list</a>
+<li><a href="#add">"Add" button</a>
+<li><a href="#remove">"Remove" button</a>
+<li><a href="#up_">"Move Up" button</a>
+<li><a href="#down">"Move Down" button</a>
+<li><a href="#import">"Import" button</a>
+<li><a href="#export">"Export" button</a>
+</ul>
+<h2><a name="Overview">Overview</a></h2>
+This dialog sets the Stack Trace Translate classpath which is used by the tool at the time of analyzing your obfuscated bytecode.  
+The <a href="035.html">Stack Trace Translate tool</a> searches the classpath for any classes that appear in the stack trace.
+Note that for every class that appears in the stack trace being translated, the <a href="035.html">Stack Trace Translate tool</a> must be able to find and analyze  
+<ul>
+<li>the class
+<li>any class that is directly or indirectly extended or implemented by the class
+<li>any class accessed by the class.
+</ul>
+<p>
+So as well as including the path to your obfuscated bytecode, the classpath must also include any support class libraries that your bytecode needs in order to run.
+It must also include the Java bootstrap classes (eg. java.lang.Object). 
+
+<h2><a name="list">Path list</a></h2>
+The list of paths that make up the current classpath.  It must include a path to your supporting class libraries and the Java bootstrap classes.
+<h2><a name="add">&quot;Add&quot; button</a></h2>
+Click the <b>"Add"</b> button to open a file dialog. The dialog will allow you to select new paths to add to the path list.
+<h2><a name="remove">"Remove" button</a></h2>
+Removes the selected path from the path list.
+<h2><a name="up_">"Move Up" button</a></h2>
+Moves the selected path upwards within the list.  The list order represents the search order. Paths at the top will be searched first.
+<h2><a name="down">"Move Down" button</a></h2>
+Moves the selected path downwards within the list.  The list order represents the search order. Paths at the bottom will be searched last.
+<h2><a name="import">"Import" button</a></h2>
+Allows you to import a list of paths from a line delimited text file.
+<h2><a name="export">"Export" button</a></h2>
+Allows you to export the list of paths to a line delimited text file.
+
+<p>
+<hr>
+<font size=-2>&copy; 2026 Zelix Pty Ltd</font>
+</body>
+</html>
+

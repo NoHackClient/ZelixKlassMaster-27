@@ -1,0 +1,68 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'com.zelix'
+version = ''
+
+java {
+    
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+repositories { mavenCentral() }
+
+dependencies {
+    
+    implementation files('lib/ant-1.10.11.jar', 'lib/stubs-wtk.jar')
+    
+    if (file('lib/zkm-runtime.jar').exists()) implementation files('lib/zkm-runtime.jar')
+    
+    if (file('lib/zkm-residue.jar').exists()) implementation files('lib/zkm-residue.jar')
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = 17
+    options.compilerArgs += ['-nowarn', '-Xmaxerrs', '10000']
+}
+
+application {
+    mainClass = 'com.zelix.ZKM'
+}
+
+jar {
+    manifest { attributes 'Main-Class': 'com.zelix.ZKM' }
+    
+    if (file('lib/zkm-runtime.jar').exists()) from(zipTree('lib/zkm-runtime.jar')) { exclude 'META-INF/**' }
+    if (file('lib/zkm-residue.jar').exists()) from(zipTree('lib/zkm-residue.jar')) { exclude 'META-INF/**' }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+
+
+jar.doLast {
+    def times = [:]
+    file('entry-times.tsv').eachLine { l ->
+        if (!l.startsWith('#')) { def p = l.split('\t'); times[p[0]] = java.time.LocalDateTime.parse(p[1]) }
+    }
+    def fallback = times.values().max()
+    def src = archiveFile.get().asFile
+    def tmp = new File(src.path + '.tmp')
+    new java.util.zip.ZipFile(src).withCloseable { zin ->
+        new java.util.zip.ZipOutputStream(new FileOutputStream(tmp)).withCloseable { zout ->
+            zin.entries().each { e ->
+                def n = new java.util.zip.ZipEntry(e.name)
+                def t = times[e.name] ?: fallback
+                n.setTimeLocal(t)
+                zout.putNextEntry(n)
+                if (!e.directory) zin.getInputStream(e).withCloseable { zout << it }
+                zout.closeEntry()
+            }
+        }
+    }
+    src.delete()
+    tmp.renameTo(src)
+}

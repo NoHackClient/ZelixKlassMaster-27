@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!-- Copyright 2026 Zelix Pty Ltd (ABN 47 078 740 093) --> 
+<html>
+<body bgcolor="#FFFFFF">
+
+<h1>&quot;Trim Options&quot; Window</h1>
+Contents:
+<ul>
+<li><a href="#Overview">Overview</a>
+<li><a href="#source">Delete Source File attributes</a>
+<li><a href="#deprecated">Delete Deprecated attributes</a>
+<li><a href="#annotations">Delete annotation attributes</a>
+<li><a href="#exceptions">Delete Exception attributes</a>
+<li><a href="#debug">Delete Source Debug Extension attributes</a>
+<li><a href="#unknown">Delete unknown file attributes</a>
+</ul>
+
+<h2><a name="Overview">Overview</a></h2>
+The Zelix KlassMaster<sup><font size=-2>TM</font></sup> &quot;Trim&quot; tool removes &quot;unused&quot; classes, fields and methods.  It can also reduce the size of your bytecode by removing certain attributes from the bytecode. Bytecode attributes are data structures that compilers place within the bytecode that they produce. Some attributes are essential but others are optional.
+
+<h2><a name="source">Delete Source File attributes</a></h2>
+Select this box to remove any Source File attributes from your classes. 
+Source File Attributes store the name of the source file that was compiled to produce a particular class.
+This information is typically only used to report the source file name when producing a stack trace. 
+However, some JVMs may not display line numbers in a stack trace for a particular class unless a Source File attribute is present in that class.
+So, if your processed bytecode will have Line Number information (scrambled or otherwise), then you should not select this box.
+
+<h2><a name="deprecated">Delete Deprecated attributes</a></h2>
+Select this box to remove any Deprecated attributes from your classes. 
+Deprecated Attributes are added to class files by compilers in response to &quot;@deprecated&quot; javadoc parameters.
+Typically, these attributes are only used by compilers to determine when &quot;deprecated&quot; warnings should be reported.
+So, if you do not expect users to compile new classes against your obfuscated classes, then you can safely select this box.
+
+<h2><a name="annotations">Delete annotation attributes</a></h2>
+Select this box to remove all annotation attributes from your classes. Annotations where added with the JDK 1.5.
+
+<h2><a name="exceptions">Delete Exception attributes</a></h2>
+Select this box to remove all Exception attributes from your classes. 
+Exception Attributes store information about which Checked Exceptions are thrown by particular methods.
+Compilers need this information but a JVM typically does not need it at runtime.
+So, if you do not expect users to compile new classes against your obfuscated classes, then you can safely select this box.
+
+<h2><a name="debug">Delete Source Debug Extension attributes</a></h2>
+Select this box to remove all SourceDebugExtension attributes from your classes. Such attributes may be added to your bytecode by various utilities
+but are typically not required for the running of your classes. 
+
+<h2><a name="unknown">Delete unknown file attributes</a></h2>
+Select this box to remove any attributes from your classes that are not recognized by Zelix KlassMaster. 
+If Zelix KlassMaster doesn't recognize an attribute then it most probably is not a standard attribute.
+Such attributes may be added to your bytecode by various utilities but are typically not required for the running of your classes.
+If you select this option then Zelix KlassMaster will report the names of the unknown attributes that it deletes.
+
+<p>
+<hr>
+<font size=-2>&copy; 2026 Zelix Pty Ltd</font>
+</body>
+</html>
+

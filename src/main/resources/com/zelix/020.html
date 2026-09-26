@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!-- Copyright 2026 Zelix Pty Ltd (ABN 47 078 740 093) --> 
+<html>
+<body bgcolor="#FFFFFF">
+
+<h1>&quot;Trim Exclusions&quot; Window</h1>
+Contents:
+<ul>
+<li><a href="#Overview">Overview</a>
+   <ul>
+   <li><a href="#defaultExclusions">Default exclusion parameters</a>
+   <li><a href="#classExclusion">Class exclusion parameters</a>
+   <li><a href="#fieldExclusion">Field exclusion parameters</a>
+   <li><a href="#methodExclusion">Method exclusion parameters</a>
+   </ul>
+<li><a href="#paramList">Exclusion parameter list</a>
+<li><a href="#add">Add button</a>
+<li><a href="#modify">Modify button</a>
+<li><a href="#delete">Delete button</a>
+<li><a href="#explanation">Explanation area</a>
+<li><a href="#type">Application type list</a>
+<li><a href="#mainClass">Application entry point class list</a>
+<li><a href="#test">Test button</a>
+<li><a href="#skip">Skip button</a>
+</ul>
+<h2><a name="Overview">Overview</a></h2>
+The Zelix KlassMaster<sup><font size=-2>TM</font></sup> &quot;Trim&quot; tool removes unused classes, fields and methods.  Trim exclusions specify the classes, fields and methods that 
+<b>should <u>not</u> be removed</b> by the &quot;Trim&quot; tool. 
+Zelix KlassMaster has inbuilt default trim exclusions that, along with your <b>&quot;Application type&quot;</b> and 
+<b>&quot;Application entry point&quot;</b> settings, are adequate for most purposes. So you do not have to explicitly exclude every class, field and method that you know is &quot;used&quot;.
+See the <a href="#methodExclusion">Method exclusion parameters</a> section for an explanation of how implicit exclusion works.
+
+<h3><a name="defaultExclusions">Default exclusion parameters</a></h3>
+The default exclusions appear as disabled list entries in the <b>&quot;Exclusion parameter list&quot;</b>. 
+They can only be altered by editing the <code>&quot;defaultTrimExclude.txt&quot;</code> file. They cannot be altered by using this dialog.
+
+<h3><a name="classExclusion">Class exclusion parameters</a></h3>
+An exclusion parameter that <b>excludes a class</b> prevents that class from being removed. However, in itself it will not prevent the fields and the methods of that class
+from being removed.
+
+<h3><a name="fieldExclusion">Field exclusion parameters</a></h3>
+An exclusion parameter that <b>excludes a field</b> prevents that field from being removed provided its containing class is not removed. 
+So excluding a field will not in itself prevent the containing class from being removed. 
+
+<h3><a name="methodExclusion">Method exclusion parameters</a></h3>
+Similarly, an exclusion parameter that <b>excludes a method</b> prevents that method from being removed provided its containing class is not removed. 
+So, as with fields, excluding a method will not in itself prevent its containing class from being removed.
+<p>
+If a method and its containing class are explicitly or implicitly excluded then 
+all the classes, fields and methods that that method accesses will implicitly be excluded from being trimmed.
+So, for a simple, self contained application, if the <code>public&nbsp;static&nbsp;main(java.lang.String[])</code> method and its containing class are excluded then all the 
+classes, fields and methods directly or indirectly accessed by the <code>public&nbsp;static&nbsp;main(java.lang.String[])</code> method will be <b>implicitly excluded</b> from being trimmed.
+This will result in all the &quot;used&quot; classes, fields and methods being excluded and all the &quot;unused&quot; classes, fields and methods being removed.
+
+<h2><a name="paramList">Exclusion parameter list</a></h2>
+Shows the current exclusion parameters.  Any <a href="#defaultExclusions">default exclusion parameters</a> will appear as disabled items. 
+The form of the exclusion parameters is the <b>ZKM Script</b> syntax where the &quot;*&quot; character is a wildcard.
+
+<h2><a name="add">Add button</a></h2>
+Click this button to add an exclusion parameter to the <b>&quot;Exclusion parameter&quot;</b> list.
+
+<h2><a name="modify">Modify button</a></h2>
+Click this button to modify the selected exclusion parameter in the <b>&quot;Exclusion parameter&quot;</b> list.
+
+<h2><a name="delete">Delete button</a></h2>
+Click this button to delete the selected exclusion parameter in the <b>&quot;Exclusion parameter&quot;</b> list.
+
+<h2><a name="explanation">Explanation area</a></h2>
+Displays a plain language explanation of the effect of the selected exclusion parameter in the <b>&quot;Exclusion parameter&quot;</b> list.
+
+<h2><a name="type">Application type list</a></h2>
+This list adds standard exclusion parameters to the <b>&quot;Exclusion parameter&quot;</b> list based upon the application type. 
+The added exclusion parameters are based on the access modifiers of your classes, fields and methods.
+
+<p>
+<table border=1>
+<tr>
+<td>
+<b>List item</b>
+</td>
+<td>
+<b>Explanation</b>
+</td>
+</tr>
+<tr>
+<td valign="top">
+Non-extensible library
+</td>
+<td valign="top">
+Your application is a &quot;non-extensible library&quot; if it does not form a complete application in its own right but rather is intended to be used by other developers
+as part of their application without them having to extend any of your classes. An example is a 3rd party statistics library.
+<p>
+This setting of the <b>&quot;Application type&quot;</b> list means that your public classes, fields and methods need to be accessible to other classes 
+but your classes will not be extended or implemented by other classes. It adds exclusion parameters that will prevent your <u>public classes, fields and methods</u>
+from being removed.
+</td>
+</tr>
+<tr>
+<td valign="top">
+Extensible&nbsp;framework
+</td>
+<td valign="top">
+Your application is an &quot;extensible&nbsp;framework&quot; if it does not form a complete application in its own right but rather is intended to be extended by other developers to become part of their application.  The key difference between an &quot;extensible&nbsp;framework&quot; and a &quot;non-extensible library&quot; is that an &quot;extensible&nbsp;framework&quot; has classes that are abstract which need to be extended before they can do real work.
+<p>
+This setting of the <b>&quot;Application type&quot;</b> list means that your public classes, fields and methods and protected fields and methods 
+need to be accessible to other classes because your classes will be extended or implemented by other classes.
+It adds exclusion parameters that will prevent your <u>public classes, fields and methods and protected fields and methods</u> from being removed.
+</td>
+</tr>
+<tr>
+<td valign="top">
+J2ME MIDlet
+</td>
+<td valign="top">
+This setting of the <b>&quot;Application type&quot;</b> list means that your classes are J2ME MIDlets. 
+It adds exclusion parameters that prevent your MIDlets from being removed.
+</td>
+</tr>
+<tr>
+<td valign="top">
+Self contained application or applet
+</td>
+<td valign="top">
+Your application is an &quot;Self contained application or applet&quot; if it forms a complete functioning product in its own right.
+If you select this setting of the <b>&quot;Application type&quot;</b> list no extra exclusion parameters will be added to the <b>&quot;Exclusion parameter&quot;</b> list.
+Instead, you need to select the application entry point or Applet class in the <a href="#mainClass">Application entry point class list</a>.
+</td>
+</tr>
+</table>
+
+<h2><a name="mainClass">Application entry point class list</a></h2>
+This list adds an exclusion parameter that excludes the selected &quot;entry point&quot; class from being removed. The contents of the list consist of all the opened classes 
+that contain the <code>public&nbsp;static&nbsp;main(java.lang.String[])</code> method or that extend <code>java.applet.Applet</code>. 
+If your application contains more than one entry point then you will need to exclude these additional entry points by adding custom exclude parameters using the <a href="#add">Add button</a>.
+
+<h2><a name="test">Test button</a></h2>
+Click this button to test the effect of the current exclusion parameters in the <b>&quot;Exclusion parameter&quot;</b> list on your opened classes. 
+You will be given a report of what would be trimmed given the current parameters. Your classes will not be affected.
+<p>
+Note: this button will <b>not</b> be present inside the &quot;ZKM Script Helper&quot; dialog sequence.
+
+<h2><a name="skip">Skip button</a></h2>
+Click this button to skip the trim exclusion step. 
+<p>
+Note: this button will only be present if you are within a multi-step &quot;helper&quot; dialog sequence.
+
+<p>
+<hr>
+<font size=-2>&copy; 2026 Zelix Pty Ltd</font>
+</body>
+</html>
+

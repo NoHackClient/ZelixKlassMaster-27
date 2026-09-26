@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!-- Copyright 2026 Zelix Pty Ltd (ABN 47 078 740 093) --> 
+<html>
+<body bgcolor="#FFFFFF">
+
+<h1>"Stack Trace Translate" Window</h1>
+Contents:
+<ul>
+<li><a href="#Overview">Overview</a>
+<li><a href="#logName">Change log file "..." button</a>
+<li><a href="#classpath">Obfuscated bytecode "..." button</a>
+<li><a href="#analyze">"Analyze obfuscated bytecode" check box</a>
+<li><a href="#paste">"Paste" button</a>
+<li><a href="#original">"Place the original stack trace here" area</a>
+<li><a href="#copy">"Copy" button</a>
+<li><a href="#translation">"Translated stack trace will appear here" area</a>
+<li><a href="#translate">"Translate" button</a>
+</ul>
+
+<h2><a name="Overview">Overview</a></h2>
+The Zelix KlassMaster<sup><font size=-2>TM</font></sup> Stack Trace Translate tool allows you to translate a stack trace 
+containing obfuscated class and method names to get the original class names and method names.
+If you used Zelix KlassMaster's Scrambled Line Number table feature then it will also translate the scrambled line numbers
+ to the original source code line numbers.
+<p>
+To use the tool, you must have chosen to <a href="033.html#outputLogBox">produce a change log</a> when you obfuscated your bytecode and 
+you must have retained the change log.
+<p>
+You must set the obfuscated bytecode classpath using the obfuscated bytecode "..." button and 
+check the "Analyze obfuscated bytecode" box if you want the Stack Translate tool to analyze your obfuscated bytecode.
+If the Stack Translate tool can analyze your obfuscated bytecode then it can produce a much more precise translation of the stack trace.
+
+<h2><a name="logName">Change log file "..." button</a></h2>
+Click on this button to open a file dialog so that you can select the change log file you wish to use.
+You should select the change log that was produced when you obfuscated the bytecode that generated the stack trace. 
+The selected file name will appear in the field to the left of the button.  You <b>must</b> specify the change log.
+<p>
+You can select more than one change log. This can be necessary in unusual circumstances where the bytecode was obfuscated in parts producing separate change logs.
+
+<h2><a name="classpath">Obfuscated bytecode "..." button</a></h2>
+Click on this button to open the <a href="038.html">Obfuscated Bytecode Classpath dialog</a> that will allow you to specify
+<ul>
+<li>the path to your obfuscated bytecode,
+<li>the path to any class libraries that your obfuscated bytecode requires to be able to run,
+<li>the path to the Java bootstrap classes (eg. java.lang.Object).
+</ul>
+
+<h2><a name="analyze">"Analyze obfuscated bytecode" check box</a></h2>
+Check this box if you want the Stack Trace Translate tool to analyze your obfuscated bytecode so that it can produce a more precise tranlsation.
+If you check this box then you must also specify the obfuscated bytecode by using the obfuscated bytecode "..." button.
+
+<h2><a name="paste">"Paste" button</a></h2>
+Click on this button to paste the contents of the System clipboard into the "Place the original stack trace here" area.
+
+<h2><a name="original">"Place the original stack trace here" area</a></h2>
+Paste the stack trace that you wish to translate into this area.
+
+<h2><a name="copy">"Copy" button</a></h2>
+Click on this button to copy the contents of the "Translated stack trace will appear here" area into the System clipboard.
+
+<h2><a name="translation">"Translated stack trace will appear here" area</a></h2>
+The result of the translation will appear in this area. If you have not checked the "Analyze obfuscated bytecode" box then the translation will usually 
+present you with more than one possible method name for each stack trace line.  This is due to method overloading.  The stack trace translate tool can only
+distinguish between methods with overloaded names by analyzing the obfuscated bytecode.
+
+<h2><a name="translate">Translate button</a></h2>
+Click this button to perform the translation. It will be disabled until you have
+<ul>
+<li>specified a change log file and
+<li>pasted a stack trace into the "Place the original stack trace here" area.
+</ul>
+
+<p>
+<hr>
+<font size=-2>&copy; 2026 Zelix Pty Ltd</font>
+</body>
+</html>
+

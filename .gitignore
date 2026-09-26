@@ -1,0 +1,28 @@
+.gradle/
+build/
+out/
+.idea/*
+*.iml
+
+# Local IDE metadata and run state
+.idea/**
+!.idea/
+!.idea/runConfigurations/
+!.idea/runConfigurations/start.xml
+
+# Local runtime output and serialized user state
+ZKM_*.log
+ZKM_*.txt
+ZKM_*.ser
+ZKM_LoadLog.txt
+ZKM_WarningLog.txt
+
+# Temporary and generated files
+*.tmp
+*.bak
+*.class
+hs_err_pid*.log
+replay_pid*.log
+
+# Local evaluation/demo binaries
+demo/ZKM27-eval.jar

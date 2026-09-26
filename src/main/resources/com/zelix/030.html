@@ -1,0 +1,278 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!-- Copyright 2026 Zelix Pty Ltd (ABN 47 078 740 093) --> 
+<html>
+<body bgcolor="#FFFFFF">
+
+<h1>&quot;Obfuscate Method Exclude Parameter&quot; Window</h1>
+Contents:
+<ul>
+<li><a href="#Overview">Overview</a>
+<li><a href="#package">Containing package tab</a>
+   <ul>
+   <li><a href="#packageName">Name field</a>
+   <li><a href="#excludeContainingPackageName">&quot;Exclude package name as well&quot; box</a>
+   </ul>
+<li><a href="#class">Containing class tab</a>
+   <ul>
+   <li><a href="#classAccessModifier">Access modifier list</a>
+   <li><a href="#classModifier">Modifier list</a>
+   <li><a href="#className">Name field</a>
+   <li><a href="#extends">Extends field</a>
+   <li><a href="#implements">Implements field</a>
+   <li><a href="#annotatedBy">&quot;Annotated by&quot; field</a>
+   <li><a href="#excludeContainingClassName">&quot;Exclude class name as well&quot; box</a>
+   </ul>
+<li><a href="#method">Method tab</a>
+   <ul>
+   <li><a href="#methodAccessModifier">Access modifier list</a>
+   <li><a href="#methodModifier">Modifier list</a>
+   <li><a href="#methodName">Name field</a>
+   <li><a href="#methodArgumentTypes">Arguments field</a>
+   <li><a href="#methodExceptionTypes">Throws field</a>
+   <li><a href="#memberAnnotatedBy">&quot;Annotated by&quot; field</a>
+   </ul>
+<li><a href="#parameter">&quot;Parameter so far&quot; field</a>
+<li><a href="#explanation">Explanation area</a>
+</ul>
+<h2><a name="Overview">Overview</a></h2>
+Use this dialog to create or modify a parameter that excludes one or more methods from being removed by the &quot;obfuscate&quot; tool.  
+The finished parameter will appear in the <a href="025.html">Obfuscate Name Exclusion</a> window's <b>&quot;Exclusion parameter&quot;</b> list. 
+A method exclusion parameter can be thought of as consisting of the following components (mandatory components in bold):
+<ul>
+<li>class modifiers
+<li>package qualifiers
+<li><b>class name</b>
+<li>extends clause
+<li>implements clause
+<li>class annotation class name
+<li>method modifiers
+<li><b>method name</b>
+<li><b>method argument types</b>
+<li>thrown exception types
+<li>method annotation class name
+</ul>
+For a method to match a given exclusion parameter, it must match <b>all</b> the components of the parameter.  
+You can modify the package qualifiers component of the parameter by selecting the <b>&quot;<a href="#package">Containing package</a>&quot;</b> tab. 
+You can modify the class modifiers, class name, class extends and implements clause components of the parameter by selecting the <b>&quot;<a href="#package">Containing class</a>&quot;</b> tab. 
+All the other components can be modified by selecting the <b>&quot;<a href="#class">Method</a>&quot;</b> tab.
+
+<h2><a name="package">Containing package tab</a></h2>
+<h3><a name="packageName">Name field</a></h3>
+Enter the package name.  You may use the &quot;*&quot; wildcard.  For example:
+<p>
+<table border=1>
+<tr>
+   <td align="center">
+       <b>Parameter</b>
+   </td>
+   <td align="center">
+      <b>Matches</b>
+   </td>
+</tr> 
+<tr>
+   <td>
+       <code>*</code>
+   </td>
+   <td>
+      any package name
+   </td>
+</tr> 
+<tr>
+   <td>
+       <code>pack1.pack2</code>
+   </td>
+   <td>
+      only <code>pack1.pack2</code>
+   </td>
+</tr> 
+<tr>
+   <td>
+       <code>pack1.p*</code>
+   </td>
+   <td>
+      any subpackages of <code>pack1</code> that start with &quot;<code>p</code>&quot;
+   </td>
+</tr> 
+</table>
+
+<h3><a name="excludeContainingPackageName">&quot;Exclude package name as well&quot; box</a></h3>
+Select this box if you wish the name of the containing package of any matching method to be excluded in addition to the method itself.
+
+
+<h2><a name="class">Containing class tab</a></h2>
+<h3><a name="classAccessModifier">Access modifier list</a></h3>
+Optional. Specifies the class access modifier. You may select <code>public</code> or <code>package</code>.  
+Only classes matching the specified access modifier will match the exclusion parameter.
+
+<h3><a name="classModifier">Modifier list</a></h3>
+Optional. Specifies the class modifiers other than access modifiers.
+You can select more than one modifier.
+Only classes matching <b>all</b> of the specified modifiers will match the exclusion parameter.
+
+<h3><a name="className">Name field</a></h3>
+Enter the class name.  You may use the &quot;*&quot; wildcard.  For example:
+<p>
+<table border=1>
+<tr>
+   <td align="center">
+       <b>Parameter</b>
+   </td>
+   <td align="center">
+      <b>Matches</b>
+   </td>
+</tr> 
+<tr>
+   <td>
+       <code>*</code>
+   </td>
+   <td>
+      any class name
+   </td>
+</tr> 
+<tr>
+   <td>
+       <code>Class1</code>
+   </td>
+   <td>
+      only <code>Class1</code>
+   </td>
+</tr> 
+<tr>
+   <td>
+       <code>C*</code>
+   </td>
+   <td>
+      any class name starting with &quot;<code>C</code>&quot;
+   </td>
+</tr> 
+</table>
+
+
+<h3><a name="extends">Extends field</a></h3>
+Optional. Enter the <b>fully qualified</b> class name that a matching class must directly or indirectly extend. You cannot use wildcards.
+
+<h3><a name="implements">Implements field</a></h3>
+Optional. Enter the <b>fully qualified</b> interface names that a matching class must directly or indirectly implement. 
+If you specifiy more than one interface name then you must separate the names with commas. You cannot use wildcards.
+
+<h3><a name="annotatedBy">&quot;Annotated by&quot; field</a></h3>
+Optional. Enter the <b>fully qualified</b> class name of an annotation that a matching class must have. You can use the &quot;*&quot; wildcard. Do not include the &quot;@&quot; character.
+
+
+<h3><a name="excludeContainingClassName">&quot;Exclude class name as well&quot; box</a></h3>
+Select this box if you wish the name of the containing class of any matching method to be excluded in addition to the name of the method itself.
+
+<h2><a name="method">Method tab</a></h2>
+
+<h3><a name="methodAccessModifier">Access modifier list</a></h3>
+Optional. Specifies the method access modifier. You may select <code>public</code>, <code>protected</code>, <code>package</code> or <code>private</code>.  
+Only methods matching the specified access modifier will match the exclusion parameter.
+
+<h3><a name="methodModifier">Modifier list</a></h3>
+Optional. Specifies the method modifiers other than access modifiers.
+You can select more than one modifier.
+Only methods matching <b>all</b> of the specified modifiers will match the exclusion parameter.
+
+<h3><a name="methodName">Name field</a></h3>
+Enter the method name.  You may use the &quot;*&quot; wildcard.  For example:
+<p></p>
+<table border=1>
+<tr>
+   <td align="center">
+       <b>Parameter</b>
+   </td>
+   <td align="center">
+      <b>Matches</b>
+   </td>
+</tr> 
+<tr>
+   <td>
+       <code>*</code>
+   </td>
+   <td>
+      any method name
+   </td>
+</tr> 
+<tr>
+   <td>
+       <code>method1</code>
+   </td>
+   <td>
+      only <code>method1</code>
+   </td>
+</tr> 
+<tr>
+   <td>
+       <code>m*</code>
+   </td>
+   <td>
+      any method name starting with &quot;<code>m</code>&quot;
+   </td>
+</tr> 
+</table>
+
+<h3><a name="methodArgumentTypes">Arguments field</a></h3>
+Enter the argument types of the method.  You may enter zero or more types.  If more than one type is entered then they must be comma separated.
+The types may be primitive types such as <code>int</code> or <b>fully qualified</b> class names such as <code>java.lang.String</code>. 
+You can use a single wildcard to indicate that <b>any</b> parameters should be matched. You may not use wildcards within an individual argument type.  For example:
+<table border=1>
+<tr>
+   <td align="center">
+       <b>Parameter</b>
+   </td>
+   <td align="center">
+      <b>Matches</b>
+   </td>
+</tr> 
+<tr>
+   <td>
+       <code>*</code>
+   </td>
+   <td>
+      any method parameter types including methods that take no arguments at all.
+   </td>
+</tr> 
+<tr>
+   <td>
+       <code>int, java.lang.String[]</code>
+   </td>
+   <td>
+      only methods that take exactly <code>int, java.lang.String[]</code>
+   </td>
+</tr> 
+<tr>
+   <td>
+       <code></code>
+   </td>
+   <td>
+      only matches methods that take no arguments at all.
+   </td>
+</tr> 
+</table>
+
+<h3><a name="methodExceptionTypes">Throws field</a></h3>
+Enter the exception types that must appear in the &quot;throws&quot; clause of matching methods.  
+The types must be <b>fully qualified</b> class names such as <code>java.lang.IOException</code>.
+You may enter one or more types.  
+If more than one type is entered then they must be comma separated and, to match, a particular method must throw each of the specified types.
+However, note that any exception type that you specify will also be matched by subclasses of that type.
+You may not use wildcards.  
+
+<h3><a name="memberAnnotatedBy">&quot;Annotated by&quot; field</a></h3>
+Optional. Enter the <b>fully qualified</b> class name of an annotation that a matching method must have. You can use the &quot;*&quot; wildcard. Do not include the &quot;@&quot; character.
+
+
+
+<h2><a name="parameter">&quot;Parameter so far&quot; field</a></h2>
+Displays the exclusion parameter specified so far in &quot;ZKM Script&quot; syntax.
+
+<h2><a name="explanation">Explanation area</a></h2>
+Displays a plain language explanation of the effect of the exclusion parameter specified so far.
+
+
+<p>
+<hr>
+<font size=-2>&copy; 2026 Zelix Pty Ltd</font>
+</body>
+</html>
+

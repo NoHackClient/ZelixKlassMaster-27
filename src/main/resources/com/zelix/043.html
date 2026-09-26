@@ -1,0 +1,228 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!-- Copyright 2026 Zelix Pty Ltd (ABN 47 078 740 093) --> 
+<html>
+<body bgcolor="#FFFFFF">
+
+<h1>&quot;Obfuscate Field Include Parameter&quot; Window</h1>
+Contents:
+<ul>
+<li><a href="#Overview">Overview</a>
+<li><a href="#package">Containing package tab</a>
+   <ul>
+   <li><a href="#packageName">Name field</a>
+   </ul>
+<li><a href="#class">Containing class tab</a>
+   <ul>
+   <li><a href="#classAccessModifier">Access modifier list</a>
+   <li><a href="#classModifier">Modifier list</a>
+   <li><a href="#className">Name field</a>
+   <li><a href="#extends">Extends field</a>
+   <li><a href="#implements">Implements field</a>
+   <li><a href="#annotatedBy">&quot;Annotated by&quot; field</a>
+   </ul>
+<li><a href="#field">Field tab</a>
+   <ul>
+   <li><a href="#fieldAccessModifier">Access modifier list</a>
+   <li><a href="#fieldModifier">Modifier list</a>
+   <li><a href="#fieldName">Name field</a>
+   <li><a href="#fieldType">Type field</a>
+   <li><a href="#memberAnnotatedBy">&quot;Annotated by&quot; field</a>
+   </ul>
+<li><a href="#parameter">&quot;Parameter so far&quot; field</a>
+<li><a href="#explanation">Explanation area</a>
+</ul>
+<h2><a name="Overview">Overview</a></h2>
+Use this dialog to create or modify a parameter that includes one or more field references to be obscured by the &quot;obfuscate references&quot; tool.  
+The finished parameter will appear in the <a href="041.html">Obfuscate Reference Inclusion</a> window's <b>&quot;Inclusion parameter&quot;</b> list. 
+A field inclusion parameter can be thought of as consisting of the following components (mandatory components in bold):
+<ul>
+<li>class modifiers
+<li>package qualifiers
+<li><b>class name</b>
+<li>extends clause
+<li>implements clause
+<li>class annotation class name
+<li>field modifiers
+<li><b>field name</b>
+<li>field type
+<li>field annotation class name
+</ul>
+For a field to match a given inclusion parameter, it must match <b>all</b> the components of the parameter.  
+You can modify the package qualifier component of the parameter by selecting the <b>&quot;<a href="#package">Containing package</a>&quot;</b> tab. 
+You can modify the class modifiers, class name, class extends and implements clause components of the parameter by selecting the 
+<b>&quot;<a href="#package">Containing class</a>&quot;</b> tab. 
+All the other components can be modified by selecting the <b>&quot;<a href="#class">Field</a>&quot;</b> tab.
+<p>
+Note that the ZKM Script language &quot;obfuscateReferencesInclude&quot; is much more powerful. It also allows you to specify the reference obfuscation based upon the methods from which the references are made.
+
+<h2><a name="package">Containing package tab</a></h2>
+<h3><a name="packageName">Name field</a></h3>
+Enter the package name.  You may use the &quot;*&quot; wildcard.  For example:
+<p>
+<table border=1>
+<tr>
+   <td align="center">
+       <b>Parameter</b>
+   </td>
+   <td align="center">
+      <b>Matches</b>
+   </td>
+</tr> 
+<tr>
+   <td>
+       <code>*</code>
+   </td>
+   <td>
+      any package name
+   </td>
+</tr> 
+<tr>
+   <td>
+       <code>pack1.pack2</code>
+   </td>
+   <td>
+      only <code>pack1.pack2</code>
+   </td>
+</tr> 
+<tr>
+   <td>
+       <code>pack1.p*</code>
+   </td>
+   <td>
+      any subpackages of <code>pack1</code> that start with &quot;<code>p</code>&quot;
+   </td>
+</tr> 
+</table>
+
+
+<h2><a name="class">Containing class tab</a></h2>
+<h3><a name="classAccessModifier">Access modifier list</a></h3>
+Optional. Specifies the class access modifier. You may select <code>public</code> or <code>package</code>.  
+Only classes matching the specified access modifier will match the exclusion parameter.
+
+<h3><a name="classModifier">Modifier list</a></h3>
+Optional. Specifies the class modifiers other than access modifiers.
+You can select more than one modifier.
+Only classes matching <b>all</b> of the specified modifiers will match the exclusion parameter.
+
+<h3><a name="className">Name field</a></h3>
+Enter the class name.  You may use the &quot;*&quot; wildcard.  For example:
+<p>
+<table border=1>
+<tr>
+   <td align="center">
+       <b>Parameter</b>
+   </td>
+   <td align="center">
+      <b>Matches</b>
+   </td>
+</tr> 
+<tr>
+   <td>
+       <code>*</code>
+   </td>
+   <td>
+      any class name
+   </td>
+</tr> 
+<tr>
+   <td>
+       <code>Class1</code>
+   </td>
+   <td>
+      only <code>Class1</code>
+   </td>
+</tr> 
+<tr>
+   <td>
+       <code>C*</code>
+   </td>
+   <td>
+      any class name starting with &quot;<code>C</code>&quot;
+   </td>
+</tr> 
+</table>
+
+
+<h3><a name="extends">Extends field</a></h3>
+Optional. Enter the <b>fully qualified</b> class name that a matching class must directly or indirectly extend. You cannot use wildcards.
+
+<h3><a name="implements">Implements field</a></h3>
+Optional. Enter the <b>fully qualified</b> interface names that a matching class must directly or indirectly implement. 
+If you specifiy more than one interface name then you must separate the names with commas. You cannot use wildcards.
+
+<h3><a name="annotatedBy">&quot;Annotated by&quot; field</a></h3>
+Optional. Enter the <b>fully qualified</b> class name of an annotation that a matching class must have. You can use the &quot;*&quot; wildcard. Do not include the &quot;@&quot; character.
+
+
+
+<h2><a name="field">Field tab</a></h2>
+
+<h3><a name="fieldAccessModifier">Access modifier list</a></h3>
+Optional. Specifies the field access modifier. You may select <code>public</code>, <code>protected</code>, <code>package</code> or <code>private</code>.  
+Only fields matching the specified access modifier will match the exclusion parameter.
+
+<h3><a name="fieldModifier">Modifier list</a></h3>
+Optional. Specifies the field modifiers other than access modifiers.
+You can select more than one modifier.
+Only fields matching <b>all</b> of the specified modifiers will match the exclusion parameter.
+
+<h3><a name="fieldName">Name field</a></h3>
+Enter the field name.  You may use the &quot;*&quot; wildcard.  For example:
+<p>
+<table border=1>
+<tr>
+   <td align="center">
+       <b>Parameter</b>
+   </td>
+   <td align="center">
+      <b>Matches</b>
+   </td>
+</tr> 
+<tr>
+   <td>
+       <code>*</code>
+   </td>
+   <td>
+      any field name
+   </td>
+</tr> 
+<tr>
+   <td>
+       <code>field1</code>
+   </td>
+   <td>
+      only <code>field1</code>
+   </td>
+</tr> 
+<tr>
+   <td>
+       <code>f*</code>
+   </td>
+   <td>
+      any field name starting with &quot;<code>f</code>&quot;
+   </td>
+</tr> 
+</table>
+
+<h3><a name="fieldType">Type field</a></h3>
+Optional. Enter the type of the field.  You may enter a primitive type such as <code>int</code> or a <b>fully qualified</b> class name such as <code>java.lang.String</code>. You cannot use wildcards.
+
+<h3><a name="memberAnnotatedBy">&quot;Annotated by&quot; field</a></h3>
+Optional. Enter the <b>fully qualified</b> class name of an annotation that a matching field must have. You can use the &quot;*&quot; wildcard. Do not include the &quot;@&quot; character.
+
+
+
+<h2><a name="parameter">&quot;Parameter so far&quot; field</a></h2>
+Displays the exclusion parameter specified so far in &quot;ZKM Script&quot; syntax.
+
+<h2><a name="explanation">Explanation area</a></h2>
+Displays a plain language explanation of the effect of the exclusion parameter specified so far.
+
+
+<p>
+<hr>
+<font size=-2>&copy; 2026 Zelix Pty Ltd</font>
+</body>
+</html>
+

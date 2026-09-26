@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="start" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="com.zelix.ZKM" />
+    <module name="zkm27.main" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

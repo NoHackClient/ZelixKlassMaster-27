@@ -1,0 +1,45 @@
+package com.zelix.klassmaster.ui.dialog;
+
+import com.zelix.klassmaster.util.ZkmUtils;
+
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+
+public class AttributeOptionsKeyListener extends KeyAdapter {
+    public final DeleteAttributesDialog dialog;
+
+    @Override
+    public void keyPressed(KeyEvent keyEvent) {
+        try {
+            if (keyEvent.getKeyCode() == 10) {
+                Object object = keyEvent.getSource();
+                if (object == this.dialog.previousBtn) {
+                    this.dialog.onPrevious();
+                } else if (object == this.dialog.okBtn) {
+                    this.dialog.onOk();
+                } else if (object == this.dialog.cancelBtn) {
+                    this.dialog.onCancel();
+                } else if (object == this.dialog.helpBtn) {
+                    this.dialog.showHelp();
+                }
+            }
+        } catch (Throwable throwable) {
+            throw ZkmUtils.sneakyThrow(throwable);
+        }
+    }
+
+    public AttributeOptionsKeyListener(DeleteAttributesDialog deleteAttributesDialog1) {
+        this.dialog = deleteAttributesDialog1;
+    }
+
+    static {
+        try {
+            staticInit();
+        } catch (Exception exception) {
+            throw new ExceptionInInitializerError(exception);
+        }
+    }
+
+    private static void staticInit() {
+    }
+}

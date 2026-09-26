@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!-- Copyright 2026 Zelix Pty Ltd (ABN 47 078 740 093) --> 
+<html>
+<body bgcolor="#FFFFFF">
+
+<h1>&quot;Garbage Collect&quot; Window</h1>
+Contents:
+<ul>
+<li><a href="#Overview">Overview</a>
+</ul>
+
+<h2><a name="Overview">Overview</a></h2>
+
+The <b>"Garbage Collect"</b> option suggests to the Java Virtual Machine that it should attempt garbage collection.
+In theory, this option should not be required. In practice, with some Virtual Machines and when memory is low, 
+it can be handy to select this option prior to performing a complex operation. If you are not having any memory
+problems then ignore this option. 
+<p>
+If you have memory problems by all means see if this option helps but, if practicable, it would be better to:
+<ul>
+  <li>Give the Virtual Machine more memory to play with by using the <code>-XmxNNm</code>
+     parameter when you start Java (where <code>NN</code> represents the number of megabytes). 
+     By default, most JVMs allocate only 64MB. It is recommended that
+     you don't give the Virtual Machine more memory than is physically installed. Performance is likely to be 
+     unacceptable due to virtual memory paging.
+  <li>Install more physical memory so that more available memory can be allocated to the JVM.
+ </ul>
+
+
+<p>
+<hr>
+<font size=-2>&copy; 2026 Zelix Pty Ltd</font>
+</body>
+</html>
+

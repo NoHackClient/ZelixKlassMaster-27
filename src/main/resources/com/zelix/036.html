@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!-- Copyright 2026 Zelix Pty Ltd (ABN 47 078 740 093) --> 
+<html>
+<body bgcolor="#FFFFFF">
+
+<h1>&quot;Class Open Warnings&quot; Window</h1>
+Contents:
+<ul>
+<li><a href="#Overview">Overview</a>
+<li><a href="#ignore">Warnings you can usually ignore</a>
+<li><a href="#action">What you have to do</a>
+</ul>
+
+<h2><a name="Overview">Overview</a></h2>
+Reflection API calls such as <code>Class.forName(String)</code> can cause problems for obfuscators. If a class, field or method is being accessed by name using the Reflection API and the class, field or method name is obfuscated then, if not appropriately handled, the API call would be broken.
+<p>
+Zelix KlassMaster<sup><font size=-2>TM</font></sup> can automatically handle  simple Reflection API calls.  It detects the calls and analyzes the source of the String parameter that specifies the class, field or method name.  If the ultimate source of the name is a String literal then Zelix KlassMaster will automatically change the value of the String literal to match the obfuscated class, field or method name. However, if Zelix KlassMaster cannot successfully analyze and automatically deal with a reflection API call then it reports the call in the pane above this one.  It reports 
+<ul>
+<li>the name of your class containing the Reflection API call
+<li>the signature of your method containing the Reflection API call
+<li>the class and signature of the Reflection API call
+</ul>
+The format is:
+<pre>
+In class MyClass
+    in method public static final void myMethod()
+         java.lang.Class.forName(java.lang.String)
+</pre>
+
+<h2><a name="ignore">Warnings you can usually ignore</a></h2>
+Any Reflection API calls that simply return a class, field or method name (eg. <code>Class.getName()</code>) are always reported in the pane above this one.  However, these warnings can be safely ignored if the Strings that the calls return are only used for debugging purposes such as log output. On the other hand, if the String returned by such a call is used in some comparison with a String literal or as a property file key then the warning cannot be ignored.
+
+<h2><a name="action">What you have to do</a></h2>
+If you get a Reflection API warning that you cannot ignore then the safest thing to do is to explicitly exclude the object that is being accessed by name from being obfuscated.  You do this by using the <b>&quot;Obfuscate Name Exclusions&quot;</b> dialog.
+<p>
+For example, let's say that you are warned that a <code>Class.forName(String)</code> call has not been successfully analyzed and, when you look at the call in your source code, you see that that is used to access your class <code>com.mycompany.MyDynamicallAccessedClass</code>. What you should do is explicitly exclude the name of the class <code>com.mycompany.MyDynamicallAccessedClass</code> and its package name from being obfuscated.
+<p>
+Similarly, if you are warned that a <code>Class.getDeclaredField(String)</code> call has not been successfully analyzed and, when you look at the call in your source code, you see that that is used to access the field <code>myDynamicallyAccessedField</code> in your class <code>com.mycompany.MyClass</code> then you should explicitly exclude the name of the field <code>myDynamicallyAccessedField</code> from being obfuscated.
+
+<p>
+<hr>
+<font size=-2>&copy; 2026 Zelix Pty Ltd</font>
+</body>
+</html>
+

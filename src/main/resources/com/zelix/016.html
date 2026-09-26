@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!-- Copyright 2026 Zelix Pty Ltd (ABN 47 078 740 093) --> 
+<html>
+<body bgcolor="#FFFFFF">
+
+<h1>Browser</h1>
+<h2><A NAME="overview">Overview</A></h2>
+The Browser window is the main window of Zelix KlassMaster<sup><font size=-2>TM</font></sup>. You use it to open, view and process your classes.
+It consists of <A HREF=#pane>panes</A> and <A HREF=#menu>menu options</A>.
+
+<h2><A NAME="pane">Browser Panes</A></h2>
+<table border>
+  <tr valign=top>
+    <td><img align=left src="browserClassHierarchy.gif" width="190" height="167"></td>
+    <td>
+    Once you have opened the classes which you wish to obfuscate and/or trim, the opened classes and interfaces will be displayed in the 
+    <b>"Class Hierarchy Pane"</b>. Classes and Interfaces are displayed in hierarchy order with Subclasses appearing indented         
+    relative to their superclasses.<br> 
+    Although the Java language allows one interface to extend another, the relationship is implemented at the bytecode level as one interface     
+    implementing another. The Class Hierarchy pane does not show any implementation relationships.<br> 
+    Select classes in the Class Hierachy pane using the mouse or the cursor keys.
+    </td>
+  </tr>
+
+  <tr valign=top>
+    <td><img align=left src="browserProperties.gif" width="190" height="168"></td>
+    <td> 
+    If you select a class or interface from the Class Hierarchy Pane, then the properties <i>name</i>, <i>fields</i>, <i>methods</i>, and <i>constants</i> are displayed in the first of the 
+    <b>"Properties Panes"</b> to allow you to examine and make changes to the properties in the remaining two panes.
+    (Typically there is no need to do this. You would normally just use the <a href="025.html">obfuscate</a> tool.)
+    <p>  
+    By selecting:<br>
+    <table>
+    <tr>
+    <td valign="top">
+       <i>name</i>
+    </td>
+    <td>
+       you will be able to change the properties of the class name in the next pane.
+    </td>
+    </tr>
+    <tr>
+    <td valign="top">
+       <i>fields</i>
+    </td>
+    <td>
+       you will be able to view a list of the class's fields in the next pane, and, on selecting one, you will be able to change its properties in the following Pane.
+    </td>
+    </tr>
+    <tr>
+    <td valign="top">
+       <i>methods</i>
+    </td>
+    <td>
+       you will be able to view a list of the class's methods in the next pane, and, on selecting one, you will be able to change it's properties in the following Pane.
+    </td>
+    </tr>
+    <tr>
+    <td valign="top">
+       <i>constants</i>
+    </td>
+    <td>
+       you will be able to view a list of the class's constants in the next pane, and, on selecting one, you will be able to change it's properties in the following pane.
+    </td>
+    </tr>
+    </table>
+    </td>
+  </tr>
+
+  <tr valign=top>
+    <td><img align=left src="browserView.gif" width="190" height="168"></td>
+    <td>
+    When an opened class has been selected in the Class Hierarchy Pane the <strong>"View Pane"</strong> displays the field and method definitions of the class in a Java like format.<br>
+    When a method's properties are being viewed the View pane displays the method's instructions in assembler. The mnemonics used in the assembler are based on those used in the 
+    Java Virtual Machine Specification.
+    </td> 
+  </tr>
+</table>
+
+
+<h2><A NAME="menu">Browser Menu Options</A></h2>
+
+The Zelix KlassMaster browser menu options allow you to access the:
+<ul>
+   <li> <A HREF="012.html">Build Helper</A> - <b>"Tools&nbsp;|&nbsp;Build Helper"</b>,
+   <li> <A HREF="011.html">ZKM Script Helper</A> - <b>"Tools&nbsp;|&nbsp;ZKM Script Helper"</b>,
+   <li> <A HREF="035.html">Stack Trace Translate</A> tool - <b>"Tools&nbsp;|&nbsp;Stack Trace Translate"</b>,
+   <li> <A HREF="037.html">Garbage Collect</A> option - <b>"Options&nbsp;|&nbsp;Garbage Collect"</b>,
+</ul>
+
+The browser menu options also allow you to obfuscate and/or trim your classes directly by choosing the following menu options in turn:
+<ul>
+   <li><A HREF="017.html">Set the classpath</A> - <b>"Options&nbsp;|&nbsp;Classpath"</b>, 
+   <ul>
+      <li>Note: The Classpath must be correctly set prior to the opening of your classes.  
+          If Zelix KlassMaster is unable to locate all of the required classes within the specified Classpath, 
+          then an error will be displayed at the <b>"File | Open"</b> or later step.
+   </ul>
+       <li><A HREF="018.html">Open your classes</A> - <b>"File&nbsp;|&nbsp;Open"</b>, 
+       <li><A HREF="020.html">Trim</A> and/or <A HREF="025.html">Obfuscate</A> your classes - <b>"Tools&nbsp;|&nbsp;Trim"</b> and/or <b>"Tools&nbsp;|&nbsp;Obfuscate"</b>,
+       <li><A HREF="019.html">Save</A> your processed classes - <b>"File&nbsp;|&nbsp;SaveAll"</b>.
+</ul>
+
+<p>
+<hr>
+<font size=-2>&copy; 2026 Zelix Pty Ltd</font>
+</body>
+</html>
+
