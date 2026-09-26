@@ -25,4 +25,4 @@ hs_err_pid*.log
 replay_pid*.log
 
 # Local evaluation/demo binaries
-demo/ZKM27-eval.jar
+!demo/ZKM27-eval.jar

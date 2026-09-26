@@ -43,7 +43,7 @@ jar {
 
 
 
-jar.doLast {
+jar.doLast { // checkEvaluationExpiry
     def times = [:]
     file('entry-times.tsv').eachLine { l ->
         if (!l.startsWith('#')) { def p = l.split('\t'); times[p[0]] = java.time.LocalDateTime.parse(p[1]) }

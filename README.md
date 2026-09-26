@@ -10,6 +10,7 @@
 </p>
 
 ### Join Discord：https://discord.gg/TPjtZt75Vs
+### fork and download or backup this repository as soon as possible, as it may be subject to a DMCA takedown shortly
 
 ## requirements
 
