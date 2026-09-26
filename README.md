@@ -61,6 +61,10 @@ java -jar build/libs/zkm27.jar script.zkm
 >
 > Contributions and bug reports are welcome—please feel free to open an **Issue** or submit a **PR**!
 
+## Contributors
+
+- [imAdaLovelace](https://github.com/imAdaLovelace)
+
 ## thx
 
 - **original obfuscated software:** Zelix KlassMaster 27.0.0
