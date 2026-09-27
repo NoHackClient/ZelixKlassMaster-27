@@ -91,7 +91,7 @@ public class ExcludeParameterTypeDialog extends OwnedFrameDialogBase implements 
                 }
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -163,7 +163,7 @@ public class ExcludeParameterTypeDialog extends OwnedFrameDialogBase implements 
                 this.showHelp();
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 

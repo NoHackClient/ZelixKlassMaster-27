@@ -15,7 +15,7 @@ public class TrimOptionsAction extends AbstractAction {
                 this.deleteAttributesDialog.onCancel();
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 

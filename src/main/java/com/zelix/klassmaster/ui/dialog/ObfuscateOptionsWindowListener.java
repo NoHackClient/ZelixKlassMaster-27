@@ -14,7 +14,7 @@ public class ObfuscateOptionsWindowListener extends WindowAdapter {
             this.obfuscateOptionsDialog.closeFrame();
             this.obfuscateOptionsDialog.callback.onDialogCancelled();
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 

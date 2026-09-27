@@ -128,7 +128,7 @@ public abstract class PathListDialog extends OwnedFrameDialogBase implements Hel
                 this.showHelp();
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -161,7 +161,7 @@ public abstract class PathListDialog extends OwnedFrameDialogBase implements Hel
                 this.removeSelectedPaths();
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 

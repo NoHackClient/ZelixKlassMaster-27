@@ -151,7 +151,7 @@ public class IncludeParamTypeDialog extends OwnedFrameDialogBase implements Acti
                 }
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -179,7 +179,7 @@ public class IncludeParamTypeDialog extends OwnedFrameDialogBase implements Acti
                 this.showHelp();
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 

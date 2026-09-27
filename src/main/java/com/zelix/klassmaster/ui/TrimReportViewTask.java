@@ -103,7 +103,7 @@ public class TrimReportViewTask implements Runnable {
                 this.statusCallback.onDialogCancelled();
             }
         } catch (final Throwable t) {
-            throw ZkmUtils.sneakyThrow(t);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(t);
         }
     }
 }

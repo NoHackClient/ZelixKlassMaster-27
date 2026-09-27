@@ -25,7 +25,7 @@ public class SelectionDeltaListener implements ListSelectionListener {
             ZkmUtils.diffSortedIntArrays(this.previousSelection, selectedIndices, observableHolder, observableHolder1);
             this.selectionReceiver.handleSelectionDelta((int[]) observableHolder.getValue(), (int[]) observableHolder1.getValue());
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 

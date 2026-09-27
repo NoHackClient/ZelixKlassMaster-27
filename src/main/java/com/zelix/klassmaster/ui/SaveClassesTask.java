@@ -24,7 +24,7 @@ public class SaveClassesTask implements Runnable {
                 this.completionCallback.onDialogCancelled();
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 

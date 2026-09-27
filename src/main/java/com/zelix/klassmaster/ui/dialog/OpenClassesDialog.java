@@ -308,7 +308,7 @@ public class OpenClassesDialog extends EscapeClosableFrame implements ActionList
                 }
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -334,7 +334,7 @@ public class OpenClassesDialog extends EscapeClosableFrame implements ActionList
                 this.showHelp();
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 

@@ -89,7 +89,7 @@ public class MethodParameterObfuscator {
                                         vector.add(zkmProcessingException);
                                     }
                                 } catch (Throwable throwable) {
-                                    throw ZkmUtils.sneakyThrow(throwable);
+                                    throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
                                 }
                             }
                     );

@@ -1090,7 +1090,7 @@ public class ParameterKeyGenerator {
         Iterator iterator = map1.keySet().iterator();
 
         while (iterator.hasNext()) {
-            var longKeyNode = (LongKeyNode & EncryptionKeyChain) iterator.next();
+            LongKeyNode longKeyNode = (LongKeyNode & EncryptionKeyChain) iterator.next();
             if (!set1.contains(longKeyNode) && !set3.contains(longKeyNode) && !this.targetNodes.contains(longKeyNode)) {
                 EncryptionKeyChain encryptionKeyChain = (EncryptionKeyChain) map1.get(longKeyNode);
                 if (encryptionKeyChain.isKeyed()

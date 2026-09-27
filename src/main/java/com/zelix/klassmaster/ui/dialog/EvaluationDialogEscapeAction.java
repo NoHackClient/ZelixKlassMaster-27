@@ -18,7 +18,7 @@ public class EvaluationDialogEscapeAction extends AbstractAction {
             this.dialog.closeDialog();
             this.dialog.dialogCallback.onDialogCancelled();
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 }

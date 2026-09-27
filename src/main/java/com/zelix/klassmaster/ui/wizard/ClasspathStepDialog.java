@@ -34,7 +34,7 @@ public class ClasspathStepDialog extends ClasspathDialog {
                 super.actionPerformed(actionEvent);
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -86,7 +86,7 @@ public class ClasspathStepDialog extends ClasspathDialog {
                 super.keyPressed(keyEvent);
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 

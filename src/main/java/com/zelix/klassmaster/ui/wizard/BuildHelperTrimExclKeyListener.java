@@ -28,7 +28,7 @@ public class BuildHelperTrimExclKeyListener extends KeyAdapter {
                 }
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 

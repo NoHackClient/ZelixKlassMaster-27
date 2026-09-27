@@ -15,7 +15,7 @@ public class EscapeKeyAction extends AbstractAction {
                 this.frame.closeFrame();
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 

@@ -254,7 +254,7 @@ public abstract class PackageExclusionWizardDialog extends ExclusionWizardDialog
                 super.itemStateChanged(itemEvent);
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 

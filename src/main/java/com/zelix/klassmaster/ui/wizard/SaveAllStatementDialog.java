@@ -58,7 +58,7 @@ public class SaveAllStatementDialog extends SaveClassesDialog implements HelperD
                 }
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -87,7 +87,7 @@ public class SaveAllStatementDialog extends SaveClassesDialog implements HelperD
                 }
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 

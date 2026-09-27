@@ -15,7 +15,7 @@ public class TextReportDialogKeyListener extends KeyAdapter {
                 this.textViewerDialog.closeDialog();
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 

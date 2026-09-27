@@ -13,7 +13,7 @@ public class MessageViewOkListener implements ActionListener {
         try {
             this.textViewerDialog.closeDialog();
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 

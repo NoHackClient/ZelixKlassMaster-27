@@ -14,7 +14,7 @@ public class ZKMWtkPlugin extends WtkPluginConstants implements Obfuscator {
         try {
             ZkmApiBase.run(this.jadFile, string, file1, string2, string1);
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 

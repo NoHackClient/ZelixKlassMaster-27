@@ -141,7 +141,7 @@ public class OpenClassesChoiceDialog extends OwnedFrameDialogBase implements Hel
                 this.showHelp();
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -202,7 +202,7 @@ public class OpenClassesChoiceDialog extends OwnedFrameDialogBase implements Hel
                 }
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 

@@ -26,7 +26,7 @@ public class TrimExclusionsButtonListener implements ActionListener {
                 this.dialog.showHelp();
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 

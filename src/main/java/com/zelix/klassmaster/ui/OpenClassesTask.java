@@ -115,7 +115,7 @@ public class OpenClassesTask implements Runnable {
                 this.statusCallback.onDialogCancelled();
             }
         } catch (final Throwable t2) {
-            throw ZkmUtils.sneakyThrow(t2);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(t2);
         }
     }
 

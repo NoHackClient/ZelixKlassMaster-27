@@ -68,7 +68,7 @@ public class HelperInfoDialog extends OwnedFrameDialogBase implements HelperDial
     }
 
     public HelperInfoDialog(JFrame jFrame, String string, DialogCallback dialogCallback1) {
-        super(jFrame, "Next", string, "004", 350, 250);
+        super(jFrame, "Next", "Next", string, "004", 350, 250);
         this.parentFrame = jFrame;
         this.callback = dialogCallback1;
         this.showCenteredOnOwner();
@@ -92,7 +92,7 @@ public class HelperInfoDialog extends OwnedFrameDialogBase implements HelperDial
                 }
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -168,7 +168,7 @@ public class HelperInfoDialog extends OwnedFrameDialogBase implements HelperDial
                 this.cancelDialog();
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 }

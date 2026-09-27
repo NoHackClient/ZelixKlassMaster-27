@@ -191,7 +191,7 @@ public class ZKM extends ZkmApiBase {
                 System.exit(1);
             }
         } catch (Throwable throwable3) {
-            throw ZkmUtils.sneakyThrow(throwable3);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable3);
         }
     }
 

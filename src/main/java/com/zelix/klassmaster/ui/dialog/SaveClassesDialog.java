@@ -90,7 +90,7 @@ public class SaveClassesDialog extends OwnedFrameDialogBase implements ActionLis
                 }
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -162,7 +162,7 @@ public class SaveClassesDialog extends OwnedFrameDialogBase implements ActionLis
                 }
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 

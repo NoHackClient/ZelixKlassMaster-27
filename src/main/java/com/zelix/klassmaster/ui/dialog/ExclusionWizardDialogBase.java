@@ -379,7 +379,7 @@ public abstract class ExclusionWizardDialogBase extends ParameterListDialog impl
                 }
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 

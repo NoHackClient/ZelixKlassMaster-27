@@ -27,7 +27,7 @@ public class ChangeNotifyTask implements Runnable {
         try {
             this.invoker.invokeCallback(this.callback, this.observableModel, this.changeArg1, this.changeArg2, this.changeArg3);
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 }

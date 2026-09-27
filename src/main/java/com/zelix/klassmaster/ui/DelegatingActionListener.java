@@ -13,7 +13,7 @@ public class DelegatingActionListener implements ActionListener {
         try {
             this.editListener.onEditAction(actionEvent);
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 

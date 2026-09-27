@@ -13,7 +13,7 @@ public class DialogCloseListener extends WindowAdapter {
         try {
             this.dialog.closeDialog();
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 

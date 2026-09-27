@@ -35,6 +35,10 @@ public abstract class OwnedFrameDialogBase extends EscapeClosableFrame {
         this(jFrame, string, true, object, object1, object2, object3, null, null, null);
     }
 
+    public OwnedFrameDialogBase(JFrame jFrame, String string, Object object, Object object1, Object object2, Object object3, Object object4) {
+        this(jFrame, string, true, object, object1, object2, object3, object4, null, null);
+    }
+
     public OwnedFrameDialogBase(
             JFrame jFrame, String string, boolean bl, Object object, Object object1, Object object2, Object object3, Object object4, Object object5, Object object6
     ) {

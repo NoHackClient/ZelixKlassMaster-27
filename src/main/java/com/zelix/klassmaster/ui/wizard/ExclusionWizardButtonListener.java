@@ -26,7 +26,7 @@ public class ExclusionWizardButtonListener implements ActionListener {
                 this.excludeHelperDialog.showHelp();
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 }

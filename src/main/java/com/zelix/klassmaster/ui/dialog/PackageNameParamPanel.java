@@ -29,7 +29,7 @@ public class PackageNameParamPanel extends ExcludeParamTabPanel implements Focus
             Object object = actionEvent.getSource();
             this.commitFieldValue(object);
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -77,7 +77,7 @@ public class PackageNameParamPanel extends ExcludeParamTabPanel implements Focus
             Object object = focusEvent.getSource();
             this.commitFieldValue(object);
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -121,7 +121,7 @@ public class PackageNameParamPanel extends ExcludeParamTabPanel implements Focus
                 super.filterModel.setExcludeContainingPackage(false);
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 }

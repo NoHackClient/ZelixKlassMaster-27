@@ -151,7 +151,7 @@ public class GuiObfuscateTask implements Runnable {
                 this.statusCallback.onDialogCancelled();
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 

@@ -17,7 +17,7 @@ public class MainMenuActionForwarder implements ActionListener {
         try {
             this.mainWindow.handleMenuAction(actionEvent);
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 }

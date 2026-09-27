@@ -14,7 +14,7 @@ public class TrimOptionsWindowCloser extends WindowAdapter {
             this.deleteAttributesDialog.closeFrame();
             this.deleteAttributesDialog.dialogCallback.onDialogCancelled();
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 

@@ -7,9 +7,8 @@ group = 'com.zelix'
 version = ''
 
 java {
-    
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
 }
 
 repositories { mavenCentral() }
@@ -25,7 +24,12 @@ dependencies {
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
-    options.release = 17
+    if (JavaVersion.current().isJava8()) {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    } else {
+        options.release = 8
+    }
     options.compilerArgs += ['-nowarn', '-Xmaxerrs', '10000']
 }
 
@@ -68,7 +72,7 @@ jar.doLast { // checkEvaluationExpiry
             zin.entries().each { e ->
                 def n = new java.util.zip.ZipEntry(e.name)
                 def t = times[e.name] ?: fallback
-                n.setTimeLocal(t)
+                n.setTime(t.atZone(java.time.ZoneId.systemDefault()).toInstant().toEpochMilli())
                 zout.putNextEntry(n)
                 if (!e.directory) zin.getInputStream(e).withCloseable { zout << it }
                 zout.closeEntry()

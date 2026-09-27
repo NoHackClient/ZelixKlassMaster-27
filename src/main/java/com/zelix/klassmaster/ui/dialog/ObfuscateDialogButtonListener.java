@@ -30,7 +30,7 @@ public class ObfuscateDialogButtonListener implements ActionListener {
                 this.obfuscateOptionsDialog.showHelp();
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 }

@@ -48,7 +48,7 @@ public class ZKMProGuardTranslate extends ProGuardTranslateConstants {
 
             printStream.println("File '" + file1.getAbsolutePath() + "' doesn't exist or is a directory");
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -60,7 +60,7 @@ public class ZKMProGuardTranslate extends ProGuardTranslateConstants {
         try {
             return ProGuardInputTranslator.translateToZkmScript(string, new Properties());
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 }

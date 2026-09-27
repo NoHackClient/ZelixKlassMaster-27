@@ -40,7 +40,7 @@ public class WizardOpenClassesDialog extends OpenClassesDialog implements Helper
                 }
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -100,7 +100,7 @@ public class WizardOpenClassesDialog extends OpenClassesDialog implements Helper
                 this.showHelp();
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 

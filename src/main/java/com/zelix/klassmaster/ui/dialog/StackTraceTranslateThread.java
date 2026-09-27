@@ -31,7 +31,7 @@ public class StackTraceTranslateThread extends Thread {
 
             SwingUtilities.invokeLater(runnable);
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 

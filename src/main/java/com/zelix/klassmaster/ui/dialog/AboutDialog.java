@@ -33,7 +33,7 @@ public class AboutDialog extends EscapeClosingDialogBase implements ActionListen
         try {
             this.closeDialog();
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 

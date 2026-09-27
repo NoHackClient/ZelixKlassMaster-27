@@ -2981,7 +2981,7 @@ public class ObfuscationEngine extends ObfuscatorEngineBase {
                                                     vector.add(zkmProcessingException1);
                                                 }
                                             } catch (Throwable throwable) {
-                                                throw ZkmUtils.sneakyThrow(throwable);
+                                                throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
                                             }
                                         }
                                 );
@@ -3324,7 +3324,7 @@ public class ObfuscationEngine extends ObfuscatorEngineBase {
                             vector.add(zkmProcessingException);
                         }
                     } catch (Throwable throwable) {
-                        throw ZkmUtils.sneakyThrow(throwable);
+                        throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
                     }
                 });
                 if (!vector.isEmpty()) {
@@ -3504,7 +3504,7 @@ public class ObfuscationEngine extends ObfuscatorEngineBase {
                                         vector.add(zkmProcessingException);
                                     }
                                 } catch (Throwable throwable) {
-                                    throw ZkmUtils.sneakyThrow(throwable);
+                                    throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
                                 }
                             }
                     );
@@ -3587,7 +3587,7 @@ public class ObfuscationEngine extends ObfuscatorEngineBase {
                                         vector1.add(zkmProcessingException);
                                     }
                                 } catch (Throwable throwable) {
-                                    throw ZkmUtils.sneakyThrow(throwable);
+                                    throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
                                 }
                             }
                     );
@@ -4989,7 +4989,7 @@ public class ObfuscationEngine extends ObfuscatorEngineBase {
                                         vector.add(zkmProcessingException);
                                     }
                                 } catch (Throwable throwable) {
-                                    throw ZkmUtils.sneakyThrow(throwable);
+                                    throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
                                 }
                             }
                     );
@@ -5050,7 +5050,7 @@ public class ObfuscationEngine extends ObfuscatorEngineBase {
                             vector.add(zkmProcessingException);
                         }
                     } catch (Throwable throwable) {
-                        throw ZkmUtils.sneakyThrow(throwable);
+                        throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
                     }
                 });
                 if (!vector.isEmpty()) {

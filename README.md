@@ -18,7 +18,7 @@ bilibili：【最新最热 zkm 27 原始码泄露视频 开源去验证可直接
 
 ## requirements
 
-- JDK 17 or newer
+- JDK 8 or newer
 - highiq
 
 ## modify
@@ -56,7 +56,7 @@ java -jar build/libs/zkm27.jar script.zkm
 ## IntelliJ IDEA
 
 1. open the project folder, wait for the gradle sync.
-2. set the project SDK to JDK 17+.
+2. set the project SDK to JDK 8+.
 3. select the **start** run configuration in `.idea/runConfigurations/` and hit run.
 
 ## join us

@@ -119,7 +119,7 @@ public class ZKMStackTraceTranslate extends JvmVersionMessages {
 
             return string1;
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -143,7 +143,7 @@ public class ZKMStackTraceTranslate extends JvmVersionMessages {
 
             return string1;
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -185,7 +185,7 @@ public class ZKMStackTraceTranslate extends JvmVersionMessages {
                 return "ZKM ERROR (5): \"" + zkmException.getMessage() + "\"" + JvmVersionMessages.LINE_SEPARATOR;
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -236,7 +236,7 @@ public class ZKMStackTraceTranslate extends JvmVersionMessages {
                 return "ZKM ERROR (4): \"" + zkmException.getMessage() + "\"" + JvmVersionMessages.LINE_SEPARATOR;
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -265,7 +265,7 @@ public class ZKMStackTraceTranslate extends JvmVersionMessages {
 
             return string2;
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 

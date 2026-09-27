@@ -62,7 +62,7 @@ public class EvaluationLicenseDialog extends EscapeClosingDialogBase implements 
                 this.dialogCallback.onDialogCancelled();
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 

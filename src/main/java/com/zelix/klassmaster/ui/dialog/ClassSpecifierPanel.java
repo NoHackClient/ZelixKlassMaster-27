@@ -51,7 +51,7 @@ public class ClassSpecifierPanel extends ExcludeParamTabPanel implements ItemLis
             Object object = actionEvent.getSource();
             this.commitFieldValue(object);
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -90,7 +90,7 @@ public class ClassSpecifierPanel extends ExcludeParamTabPanel implements ItemLis
                 }
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -241,7 +241,7 @@ public class ClassSpecifierPanel extends ExcludeParamTabPanel implements ItemLis
                 }
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -252,7 +252,7 @@ public class ClassSpecifierPanel extends ExcludeParamTabPanel implements ItemLis
             Object object = focusEvent.getSource();
             this.commitFieldValue(object);
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 

@@ -340,7 +340,7 @@ public class ZKMChangeLogConvert extends ChangeLogConvertConstants {
             String string2 = string3;
             new ZKMChangeLogConvert(string2, string1, string);
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 }

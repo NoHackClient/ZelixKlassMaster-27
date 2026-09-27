@@ -305,7 +305,7 @@ public class ClassArchiveSaver {
 
                                     return objectPair;
                                 } catch (Throwable throwable) {
-                                    throw ZkmUtils.sneakyThrow(throwable);
+                                    throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
                                 }
                             }
                     )

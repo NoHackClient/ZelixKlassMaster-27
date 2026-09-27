@@ -368,7 +368,7 @@ public class StackTraceTranslateDialog extends OwnedFrameDialogBase implements A
                 this.startTranslation();
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -394,7 +394,7 @@ public class StackTraceTranslateDialog extends OwnedFrameDialogBase implements A
                 }
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 

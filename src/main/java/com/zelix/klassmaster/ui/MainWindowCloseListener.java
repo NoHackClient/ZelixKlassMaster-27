@@ -17,7 +17,7 @@ public class MainWindowCloseListener extends WindowAdapter {
         try {
             this.mainWindow.closeFrame();
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 

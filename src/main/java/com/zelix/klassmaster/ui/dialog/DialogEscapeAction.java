@@ -19,7 +19,7 @@ public class DialogEscapeAction extends AbstractAction {
                 this.dialog.cancelDialog();
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 }

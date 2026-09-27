@@ -20,7 +20,7 @@ public class ExclusionListButtonListener implements ActionListener {
                 this.dialog.removeSelectedParameter();
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 

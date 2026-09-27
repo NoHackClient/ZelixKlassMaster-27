@@ -43,7 +43,7 @@ public class TestTrimReportTask implements Runnable {
                 this.messageReporter.reportError("ERROR:", zkmProcessingException.getMessage());
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 

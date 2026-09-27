@@ -264,7 +264,7 @@ public class ProGuardTranslateDialog extends OwnedFrameDialogBase implements Act
                 }
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -378,7 +378,7 @@ public class ProGuardTranslateDialog extends OwnedFrameDialogBase implements Act
                 this.startTranslation();
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 

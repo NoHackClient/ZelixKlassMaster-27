@@ -74,7 +74,7 @@ public class ProceedConfirmDialog extends OwnedFrameDialogBase implements Helper
                 this.showHelp();
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -146,7 +146,7 @@ public class ProceedConfirmDialog extends OwnedFrameDialogBase implements Helper
                 }
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 

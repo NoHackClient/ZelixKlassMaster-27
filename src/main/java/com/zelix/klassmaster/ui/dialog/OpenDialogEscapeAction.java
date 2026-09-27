@@ -15,7 +15,7 @@ public class OpenDialogEscapeAction extends AbstractAction {
                 this.openClassesDialog.cancelOpen();
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 

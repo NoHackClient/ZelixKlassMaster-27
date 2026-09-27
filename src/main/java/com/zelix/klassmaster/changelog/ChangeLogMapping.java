@@ -420,7 +420,7 @@ public class ChangeLogMapping extends AbstractChangeLog {
                                         return ClassRepository.hasCompatibleSignature(abstractMethodInfo2, abstractMethodInfo3, commonSuperTypeResolver1) ? 1 : -1;
                                     }
                                 } catch (Throwable throwable) {
-                                    throw ZkmUtils.sneakyThrow(throwable);
+                                    throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
                                 }
                             };
                             Arrays.sort(abstractMethodInfos, comparator1);

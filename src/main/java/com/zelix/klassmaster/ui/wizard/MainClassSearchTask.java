@@ -82,7 +82,7 @@ public class MainClassSearchTask implements Runnable {
                 this.wizard.mainWindow.restoreDefaultCursor();
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 }

@@ -3879,7 +3879,7 @@ public class ClassRepository extends ChangeObservable implements NodeVisitor, Cl
                                         vector1.add(zkmProcessingException);
                                     }
                                 } catch (Throwable throwable) {
-                                    throw ZkmUtils.sneakyThrow(throwable);
+                                    throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
                                 }
                             }
                     );

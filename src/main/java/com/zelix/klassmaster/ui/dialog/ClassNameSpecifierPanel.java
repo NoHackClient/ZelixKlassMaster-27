@@ -57,7 +57,7 @@ public class ClassNameSpecifierPanel extends ExcludeParamTabPanel implements Foc
             Object object = actionEvent.getSource();
             this.commitFieldValue(object);
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -115,7 +115,7 @@ public class ClassNameSpecifierPanel extends ExcludeParamTabPanel implements Foc
             Object object = focusEvent.getSource();
             this.commitFieldValue(object);
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 

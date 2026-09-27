@@ -19,7 +19,7 @@ public class ObfuscateOptionsEscapeAction extends AbstractAction {
                 this.obfuscateOptionsDialog.cancelOptions();
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 }

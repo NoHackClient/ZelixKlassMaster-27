@@ -17,7 +17,7 @@ public class DialogWindowCloseListener extends WindowAdapter {
         try {
             this.dialog.closeFrame();
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 }

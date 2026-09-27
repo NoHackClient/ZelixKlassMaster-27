@@ -36,7 +36,7 @@ public class ZKMChangeLog extends LineSeparatorHolder {
         try {
             return this.toDottedNames(this.changeLogMapping.getOldClassNames());
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -49,7 +49,7 @@ public class ZKMChangeLog extends LineSeparatorHolder {
             String string1 = this.changeLogMapping.toOriginalTypeName(string);
             return string1 == null ? string : ZkmUtils.slashesToDots(string1);
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -72,7 +72,7 @@ public class ZKMChangeLog extends LineSeparatorHolder {
                 return string1;
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -92,7 +92,7 @@ public class ZKMChangeLog extends LineSeparatorHolder {
             String string1 = this.changeLogMapping.getNewPackageName(string);
             return string1 == null ? string : ZkmUtils.slashesToDots(string1);
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -123,7 +123,7 @@ public class ZKMChangeLog extends LineSeparatorHolder {
                 return false;
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -190,7 +190,7 @@ public class ZKMChangeLog extends LineSeparatorHolder {
                 return changeLogMethodEntry.getSignatureString();
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -234,7 +234,7 @@ public class ZKMChangeLog extends LineSeparatorHolder {
                 }
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -255,7 +255,7 @@ public class ZKMChangeLog extends LineSeparatorHolder {
             String string1 = this.changeLogMapping.getOriginalClassName(string);
             return string1 == null ? string : ZkmUtils.slashesToDots(string1);
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -278,7 +278,7 @@ public class ZKMChangeLog extends LineSeparatorHolder {
                 return string1;
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -291,7 +291,7 @@ public class ZKMChangeLog extends LineSeparatorHolder {
             String string1 = this.changeLogMapping.getNewClassName(string);
             return string1 == null ? string : ZkmUtils.slashesToDots(string1);
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -303,7 +303,7 @@ public class ZKMChangeLog extends LineSeparatorHolder {
                 return this.changeLogMapping.hasClassMapping(string) ? this.changeLogMapping.containsFieldMapping(string, string1, string2) : false;
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -326,7 +326,7 @@ public class ZKMChangeLog extends LineSeparatorHolder {
                 return string1;
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -338,7 +338,7 @@ public class ZKMChangeLog extends LineSeparatorHolder {
                 return this.changeLogMapping.getOriginalFieldName(string, string1, string2);
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -354,7 +354,7 @@ public class ZKMChangeLog extends LineSeparatorHolder {
                 return this.changeLogMapping.hasClassMapping(string);
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -416,7 +416,7 @@ public class ZKMChangeLog extends LineSeparatorHolder {
         try {
             return this.toDottedNames(this.changeLogMapping.getNewClassNames());
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -428,7 +428,7 @@ public class ZKMChangeLog extends LineSeparatorHolder {
                 return this.changeLogMapping.hasClassMapping(string) ? this.changeLogMapping.containsMethodMapping(string, string1, strings, string2) : false;
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -436,7 +436,7 @@ public class ZKMChangeLog extends LineSeparatorHolder {
         try {
             return this.toDottedNames(this.changeLogMapping.getRenamedPackageNames());
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -451,7 +451,7 @@ public class ZKMChangeLog extends LineSeparatorHolder {
                     ? this.getNewMethodSignature(string, changeLogMethodEntry.methodName, changeLogMethodEntry.argumentTypes, changeLogMethodEntry.returnType)
                     : string1;
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -466,7 +466,7 @@ public class ZKMChangeLog extends LineSeparatorHolder {
                     ? this.getOldMethodName(string, changeLogMethodEntry.methodName, changeLogMethodEntry.argumentTypes, changeLogMethodEntry.returnType)
                     : changeLogMethodEntry.methodName;
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -490,7 +490,7 @@ public class ZKMChangeLog extends LineSeparatorHolder {
                     ? this.getNewMethodName(string, changeLogMethodEntry.methodName, changeLogMethodEntry.argumentTypes, changeLogMethodEntry.returnType)
                     : changeLogMethodEntry.methodName;
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -502,7 +502,7 @@ public class ZKMChangeLog extends LineSeparatorHolder {
                 return this.changeLogMapping.hasPackageMapping(string);
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -525,7 +525,7 @@ public class ZKMChangeLog extends LineSeparatorHolder {
                 return false;
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -537,7 +537,7 @@ public class ZKMChangeLog extends LineSeparatorHolder {
                 return this.changeLogMapping.findOriginalMethods(string, string1);
             }
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 
@@ -545,7 +545,7 @@ public class ZKMChangeLog extends LineSeparatorHolder {
         try {
             return this.toDottedNames(this.changeLogMapping.getSortedPackageNames());
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 }

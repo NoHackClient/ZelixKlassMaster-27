@@ -22,7 +22,7 @@ public class ProGuardTranslateThread extends Thread {
             this.translatedScript = ProGuardInputTranslator.translateToZkmScript(this.translateDialog.proGuardArea.getText(), (Properties) null);
             SwingUtilities.invokeLater(this.resultUpdater);
         } catch (Throwable throwable) {
-            throw ZkmUtils.sneakyThrow(throwable);
+            throw ZkmUtils.<RuntimeException>sneakyThrow(throwable);
         }
     }
 }
