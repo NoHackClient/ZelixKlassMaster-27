@@ -1501,7 +1501,7 @@ public class ProgramClass extends ClassFileBase implements NodeVisitor, ClassCha
                 }
 
                 Arrays.sort(rankedValues);
-                byte bg = 2;
+                int bg = Integer.MAX_VALUE;
                 int bh = 0;
 
                 for (int i = rankedValues.length - 1; i >= 0; i += -1) {
@@ -1554,10 +1554,6 @@ public class ProgramClass extends ClassFileBase implements NodeVisitor, ClassCha
                                             + stackAnalysisException.getMessage()
                                             + "'"
                             );
-                        }
-
-                        if (bh > bg) {
-                            break;
                         }
                     }
                 }
@@ -2460,7 +2456,7 @@ public class ProgramClass extends ClassFileBase implements NodeVisitor, ClassCha
                     }
 
                     Arrays.sort(rankedValues);
-                    byte bg = 2;
+                    int bg = Integer.MAX_VALUE;
                     int bh = 0;
 
                     for (int i = rankedValues.length - 1; i >= 0; i += -1) {
@@ -2476,10 +2472,6 @@ public class ProgramClass extends ClassFileBase implements NodeVisitor, ClassCha
                             } catch (MethodAnalysisException methodAnalysisException) {
                             } catch (ZkmClassNotFoundException zkmClassNotFoundException) {
                             } catch (StackAnalysisException stackAnalysisException) {
-                            }
-
-                            if (bh > bg) {
-                                break;
                             }
                         }
                     }
